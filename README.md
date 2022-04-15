@@ -31,7 +31,21 @@ test data는 별도 폴더에 분류되어 있습니다.
 
 ## DNN Model
 '3-1. Create DNN Model' 제목의 cell은 직접 구성한 DNN 모델입니다.
+```python
+model = keras.Sequential([
+                          keras.layers.Input((28, 28, 3)),
+                          keras.layers.Conv2D(32, kernel_size=(3,3), activation='relu'),
+                          keras.layers.MaxPool2D((2,2)),
+                          keras.layers.Conv2D(64, kernel_size=(3,3), activation='relu'),
+                          keras.layers.MaxPool2D((2,2)),
+                          
+                          keras.layers.Flatten(),
+                          keras.layers.Dense(128, activation='relu'),
+                          keras.layers.Dense(128, activation='relu'),
 
+                          keras.layers.Dense(1, activation='sigmoid') # binary classification
+])
+```
 해당 모델의 learning rate와 첫번째 dense layer unit수를 최적화하려면
 
 '3-2. Create DNN Model (Hyperparameter Tuning)' 제목의 cell을 순서대로 실행해주세요.
