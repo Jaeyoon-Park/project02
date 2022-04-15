@@ -4,9 +4,15 @@
 첫번째 cell은 사용할 라이브러리를 가져옵니다.
 
 두번째 cell은 hyper parameter optimization을 위해 keras-tuner를 설치합니다.
-
+```python
+!pip install -q -U keras-tuner
+import keras_tuner as kt
+```
 세번째 cell은 현재 github repository에 있는 파일을 가져옵니다.
-
+```python
+!git clone https://github.com/Jaeyoon-Park/project02
+%cd project02
+```
 정상적으로 repository를 가져왔을 경우, 아래의 cell로 샘플 이미지를 확인할 수 있습니다.
 ```python
 os.chdir('./dataset')
